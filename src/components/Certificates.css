@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.certificates-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  background: linear-gradient(to right, #333, #666); /* Darker background */
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 60px; /* Space for the fixed navbar, adjust as needed */
+}
+
+.certificates-heading {
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 20px 0;
+}
+
+.certificate-card {
+  display: flex;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 80%; /* Adjust width as needed */
+  max-width: 1200px; /* Maximum width of the card */
+  margin: 20px 0;
+}
+
+.certificate-image {
+  width: 50%; /* Half of the card width */
+  height: auto;
+  object-fit: cover;
+}
+
+.certificate-info {
+  padding: 20px;
+  width: 50%; /* Half of the card width */
+}
+
+.certificate-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.certificate-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #008c9e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.upload-section {
+  margin-top: 20px;
+}
+
+.file-input {
+  margin-right: 10px;
+  padding: 5px;
+  border: 2px solid #00bcd4;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+}
+
+.file-input:hover {
+  border: 2px solid #008c9e;
+}
+
+.upload-button {
+  padding: 10px 20px;
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #008c9e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
