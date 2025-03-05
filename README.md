@@ -1,1 +1,1 @@
-"# Protofile" 
+Protofile
