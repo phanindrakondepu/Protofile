@@ -30,10 +30,7 @@ const Certificate = () => {
           </div>
         </div>
       ))}
-      <div className="upload-section">
-        <input type="file" className="file-input" />
-        <button className="upload-button">Upload Certificate</button>
-      </div>
+      
     </div>
   );
 };

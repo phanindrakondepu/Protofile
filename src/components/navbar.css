@@ -3,20 +3,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker for better contrast */
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Modern blue gradient */
     color: #fff;
     position: fixed;
     width: 100%;
     z-index: 1000;
     top: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
-    backdrop-filter: blur(10px); /* Adds a blur effect to the background */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px); /* Adds slight blur */
+    transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
-.navbar:hover {
-    background-color: rgba(51, 164, 34, 0.9); /* Darken on hover */
+/* Navbar changes when scrolled */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Navbar sections */
@@ -28,23 +30,25 @@
 }
 
 .nav-left {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
+    display: flex;
     align-items: center;
 }
 
 .nav-left img {
     border-radius: 50%;
-    width: 40px; /* Adjust size as needed */
-    height: 40px; /* Adjust size as needed */
+    width: 45px;
+    height: 45px;
     margin-right: 10px;
-    transition: transform 0.3s ease; /* Smooth scale transition */
+    transition: transform 0.4s ease-in-out;
 }
 
 .nav-left img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    transform: scale(1.2); /* Smooth zoom effect */
 }
 
+/* Center navigation links */
 .nav-center {
     display: flex;
     align-items: center;
@@ -58,36 +62,79 @@
 }
 
 .nav-item {
-    margin: 20px;
-    font-size: 16px;
+    margin: 0 20px;
+    font-size: 18px;
 }
 
 .nav-link {
     color: #fff;
     text-decoration: none;
+    font-weight: 500;
+    position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover effect - glowing underline */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: #ffcc00;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
 .nav-link:hover {
-    color: #ffa500;
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
 }
 
 /* Navigation icons */
 .nav-right {
     display: flex;
     align-items: center;
-    margin-left: 20px; /* Space between icons and right edge */
+    margin-left: 20px;
 }
 
 .nav-icon {
-    margin-left: 15px; /* Adjust margin between icons */
-    font-size: 24px; /* Increased size for better visibility */
-    color: #fff; /* Ensure icons are white */
-    transition: color 0.3s ease;
+    margin-left: 15px;
+    font-size: 24px;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Icon Glow Effect */
 .nav-icon:hover {
-    color: #ffa500;
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    color: #ffcc00;
+    transform: scale(1.2);
+    text-shadow: 0 0 12px rgba(255, 204, 0, 0.8);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav-center {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
 }
